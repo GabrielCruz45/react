@@ -44,7 +44,7 @@ console.log(calculateEnergy(powerConsumed));
 // status to "Active" if batteryLevel > 20, otherwise set it to
 // "Recharge".
 
-let equipment = "Inactive";
+let battery = "Inactive";
 let batteryLevel = 100;
 
 
@@ -52,12 +52,25 @@ const sleep = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-const deployMicroRobot = async () => {
-    console.log("Motoko: Deploying micro robot.");
-
-    await sleep(1000);
-
-    console.log("Togusa: 1 second wait complete.");
+const checkBattery = async () => {
+    while (true) {
+        console.log(`Batou: Battery level: ${batteryLevel}`);
+        if (batteryLevel > 20) {
+            battery = "Active";
+            console.log(`Batou: Battery is on "${battery}" mode.`);
+        }
+        else if (batteryLevel > 0) {
+            battery = "Low Battery";
+            console.log(`Batou: Battery is in "${battery}" mode.`);
+        }
+        else {
+            battery = "Inactive"
+            console.log(`Batou: Battery has no power. It's ${battery}.\n\nRecharging!\n\n`);
+            batteryLevel = 101;
+        }
+        await sleep(1000);
+        batteryLevel -= 1;
+    }
 };
 
-deployMicroRobot();
+checkBattery();
