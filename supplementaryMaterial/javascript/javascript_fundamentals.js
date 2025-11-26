@@ -66,11 +66,69 @@ const checkBattery = async () => {
         else {
             battery = "Inactive"
             console.log(`Batou: Battery has no power. It's ${battery}.\n\nRecharging!\n\n`);
-            batteryLevel = 101;
+            while (batteryLevel < 101) {
+                console.log(`Batou: Charging battery! Battery level: ${batteryLevel}\nBattery is in "${battery}" mode.`);
+                batteryLevel += 1;
+                await sleep(1000);
+            };
+            console.log(`Batou: Battery has power; recharged!.\n\nIt's ${battery}.\n\n`);
         }
         await sleep(1000);
         batteryLevel -= 1;
     }
 };
 
-checkBattery();
+// checkBattery();
+
+// Block Scoping
+// Inside an if block, declare a new variable tempCode using
+// let. Demonstrate that this variable is not accessible outside the block.
+let variable = true;
+
+if (variable == true) {
+    let tempCode = 'Life is temporary. Your definition of yourself is but a glimpse of this universe. Live unbound.';
+    console.log(tempCode);
+}
+else {
+    console.log(`Proving the variable ${tempCode} is out of scope in this else block.`);
+    // this line outputs `ReferenceError: tempCode is not defined`
+}
+
+
+// Object Access
+// Given a Tachikoma object with nested properties for pilot
+// and weapons, log the pilot's name (Motoko) and the first weapon's name.
+class Tachikoma {
+    constructor(pilotName, weaponName){
+        this.pilotName = pilotName;
+        this.weaponName = weaponName;
+    };
+};
+
+const motoko = new Tachikoma('Motoko', 'Elbi');
+console.log(`Pilot's Name: ${motoko.pilotName} | Weapon's Name: ${motoko.weaponName}`);
+
+
+// Array Access
+// The logFiles array contains three strings. Access and log the
+// string at the center index (index 1).
+
+
+
+// Function declaration
+// Write a named function authenticateAgent(id, password)
+// that simply returns true if id is "Major" and password is "Ghost", otherwise false.
+
+
+
+// Arrow function
+// Write a single-line arrow function isOperational(status) that
+// implicitly returns status === 'Ready'.
+
+
+
+// Default Parameters
+// Create a function deployAgent(name, sector = 'Unknown')
+// that uses a default parameter for the sector. Call it once with, and once without, the sector argument.
+
+
