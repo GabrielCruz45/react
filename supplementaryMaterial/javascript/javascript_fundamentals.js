@@ -99,36 +99,56 @@ else {
 // Given a Tachikoma object with nested properties for pilot
 // and weapons, log the pilot's name (Motoko) and the first weapon's name.
 class Tachikoma {
-    constructor(pilotName, weaponName){
+    constructor(pilotName, weaponName) {
         this.pilotName = pilotName;
         this.weaponName = weaponName;
     };
 };
 
-const motoko = new Tachikoma('Motoko', 'Elbi');
+const motoko = new Tachikoma('Motoko', 'Existensialism_3000');
 console.log(`Pilot's Name: ${motoko.pilotName} | Weapon's Name: ${motoko.weaponName}`);
 
 
 // Array Access
 // The logFiles array contains three strings. Access and log the
 // string at the center index (index 1).
-
+const logFiles = ['log 1', 'log 2', 'log 3'];
+console.log(logFiles[1]);
 
 
 // Function declaration
 // Write a named function authenticateAgent(id, password)
 // that simply returns true if id is "Major" and password is "Ghost", otherwise false.
+function authenticateAgent(id, password) {
+    
+    if (id == 'Major' & password == 'Ghost') {
+        return true;
+    };
+    
+    return false;
+};
 
+let id = 'Major';
+let password = 'Ghost';
 
+console.log(authenticateAgent(id, password));
 
 // Arrow function
 // Write a single-line arrow function isOperational(status) that
 // implicitly returns status === 'Ready'.
+const isOperational = (status) => {
+    return status === 'Ready'
+};
 
-
+let current_status = 'Ready';
+console.log(isOperational(current_status));
 
 // Default Parameters
 // Create a function deployAgent(name, sector = 'Unknown')
 // that uses a default parameter for the sector. Call it once with, and once without, the sector argument.
+function deployAgent(name, sector = 'Unknown') {
+    console.log(`Agent's name: ${name} | Agent's Sector: ${sector}`);
+};  
 
-
+deployAgent('Motoko');
+deployAgent('Batou', '9');
