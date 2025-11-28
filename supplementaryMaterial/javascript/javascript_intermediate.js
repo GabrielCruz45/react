@@ -86,21 +86,14 @@ const sensorReadingsTwo = sensorReadings.map(reading => reading * 1.5);
 console.log(sensorReadingsTwo);
 
 
-// --------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
 
 // Object map() in JSX context
 // You have an array of agent objects [{id: 1, name:
 // 'Motoko'}, {id: 2, name: 'Batou'}]. Use map() to transform
 // this into an array of strings like ['<li>Motoko (ID: 1)</li>', '<li>Batou (ID: 2)</li>'].
-
+const agents = [{id: 1, name: 'Motoko'}, {id: 2, name: 'Batou'}];
+const agents_strings = agents.map(agent => `<li>${agent.name} (ID: ${agent.id})</li>`);
+console.log(agents_strings);
 
 
 
@@ -108,17 +101,65 @@ console.log(sensorReadingsTwo);
 // Filter the agentRoster array of objects to create a new
 // array containing only agents whose securityLevel is
 // greater than or equal to 7.
+const agentRoster = [
+  {
+    name: "Motoko Kusanagi",
+    securityLevel: 10,
+    cyberbrainConnected: true,
+    id: 1
+},
+{
+    name: "Batou",
+    securityLevel: 9,
+    cyberbrainConnected: true,
+    id: 2
+},
+{
+    name: "Togusa",
+    securityLevel: 6,
+    cyberbrainConnected: false,
+    id: 3
+},
+{
+    name: "Aramaki",
+    securityLevel: 8,
+    cyberbrainConnected: true,
+    id: 4
+},
+{
+    name: "Ishikawa",
+    securityLevel: 7,
+    cyberbrainConnected: true,
+    id: 5
+},
+{
+    name: "Borma",
+    securityLevel: 5, 
+    cyberbrainConnected: true,
+    id: 6
+},
+{
+    name: "Saito",
+    securityLevel: 8,
+    cyberbrainConnected: false,
+    id: 7
+},
+];
 
-
-
-
+const classifiedClearance_levelSeven = agentRoster.filter(agent => agent.securityLevel >= 7);
+console.log(classifiedClearance_levelSeven);
 
 // Filtering (Immutability)
 // Create a function removeAgent(roster, agentId) that
 // uses filter() to remove an agent without modifying the
 // original roster array.
 
+function removeAgent(roster, agentId) {
+    return roster.filter(agent => agent.id !== agentId);
+};
 
+const filtered_roster = removeAgent(agentRoster, 7);
+console.log(filtered_roster);
 
 
 
