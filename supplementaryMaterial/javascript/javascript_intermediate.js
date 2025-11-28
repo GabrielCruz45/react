@@ -167,7 +167,50 @@ console.log(filtered_roster);
 // Calculate the total damage potential by summing the
 // attackValue property across all objects in the
 // weaponInventory array.
+const weaponInventory = [
+  {
+    name: "Seburo M-5 (Modified)",
+    attackValue: 120,
+    owner: "Motoko Kusanagi",
+  },
+  {
+    name: "H-CWS (Heavy Cybernetic Weapon System)",
+    attackValue: 250,
+    owner: "Batou",
+  },
+  {
+    name: "Togusa's Revolver (M15-A1)",
+    attackValue: 75,
+    owner: "Togusa",
+  },
+  {
+    name: "Digital Cloaking System",
+    attackValue: 0, // Cloaking provides no direct attack value
+    owner: "Motoko Kusanagi",
+  },
+  {
+    name: "Sniper Rifle (Customized Anti-Cyber)",
+    attackValue: 180,
+    owner: "Saito",
+  },
+  {
+    name: "Seburo MN-23 Submachine Gun",
+    attackValue: 95,
+    owner: "Ishikawa",
+  },
+  {
+    name: "Tactical Grenades (Set of 4)",
+    attackValue: 140,
+    owner: "Batou",
+  },
+];
 
+const initialValue = 0;
+const sumWithInitial = weaponInventory.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.attackValue, initialValue,
+);
+
+console.log(sumWithInitial);
 
 
 
@@ -175,6 +218,42 @@ console.log(filtered_roster);
 // Array Reduce() (Tallying-Grouping)
 // Use reduce() on the logEntries array to count how many
 // entries have the status: 'Error'.
+const logEntries = [
+  { id: 1001, timestamp: "2077-10-01T08:00:00Z", status: "Success", component: "Cyberbrain Mesh" },
+  { id: 1002, timestamp: "2077-10-01T08:01:15Z", status: "Warning", component: "Tachikoma I/O" },
+  { id: 1003, timestamp: "2077-10-01T08:02:30Z", status: "Error", component: "Weapon System Link" },
+  { id: 1004, timestamp: "2077-10-01T08:03:45Z", status: "Success", component: "Aramaki Comms" },
+  { id: 1005, timestamp: "2077-10-01T08:05:00Z", status: "Success", component: "Batou Eye Optics" },
+  { id: 1006, timestamp: "2077-10-01T08:06:15Z", status: "Error", component: "Deep Dive Protocol" },
+  { id: 1007, timestamp: "2077-10-01T08:07:30Z", status: "Warning", component: "Public Net Gateway" },
+  { id: 1008, timestamp: "2077-10-01T08:08:45Z", status: "Success", component: "Motoko Proxy" },
+  { id: 1009, timestamp: "2077-10-01T08:10:00Z", status: "Error", component: "Hanka Server Farm" },
+  { id: 1010, timestamp: "2077-10-01T08:11:15Z", status: "Success", component: "Togusa Sidearm Check" },
+  { id: 1011, timestamp: "2077-10-01T08:12:30Z", status: "Success", component: "Ishikawa Recon" },
+  { id: 1012, timestamp: "2077-10-01T08:13:45Z", status: "Error", component: "Firewall Integrity" },
+  { id: 1013, timestamp: "2077-10-01T08:15:00Z", status: "Warning", component: "Saito Scope Calibration" },
+  { id: 1014, timestamp: "2077-10-01T08:16:15Z", status: "Success", component: "Motoko Proxy" },
+  { id: 1015, timestamp: "2077-10-01T08:17:30Z", status: "Success", component: "Batou Eye Optics" },
+  { id: 1016, timestamp: "2077-10-01T08:18:45Z", status: "Error", component: "Cyberbrain Mesh" },
+  { id: 1017, timestamp: "2077-10-01T08:20:00Z", status: "Warning", component: "Tachikoma I/O" },
+  { id: 1018, timestamp: "2077-10-01T08:21:15Z", status: "Success", component: "Aramaki Comms" },
+  { id: 1019, timestamp: "2077-10-01T08:22:30Z", status: "Error", component: "Public Net Gateway" },
+  { id: 1020, timestamp: "2077-10-01T08:23:45Z", status: "Success", component: "Weapon System Link" },
+  { id: 1021, timestamp: "2077-10-01T08:25:00Z", status: "Warning", component: "Deep Dive Protocol" },
+  { id: 1022, timestamp: "2077-10-01T08:26:15Z", status: "Error", component: "Hanka Server Farm" },
+];
 
 
+const initialValue_two = 0;
+const sumWithInitial_two = logEntries.reduce(
+    (accumulator, currentValue) => {
+        if (currentValue.status === "Error") {
+            return accumulator += 1;
+        }
+        else {
+            return accumulator;
+        };
+    }, initialValue,
+);
 
+console.log(sumWithInitial_two);
