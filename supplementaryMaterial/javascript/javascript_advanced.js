@@ -8,16 +8,35 @@ function logMissionDebrief(agent, ...notes) {
     return {agent, notes: [...notes]};
 };
 
-console.log(logMissionDebrief("Major Kusanagi", "Section 9 mobilized.", "Primary target apprehended.", "No civilian casualties."));
+console.log(
+    logMissionDebrief(
+        "Major Kusanagi", 
+        "Section 9 mobilized.", 
+        "Primary target apprehended.", 
+        "No civilian casualties.")
+);
+
 
 // Closure (counter)
 // Create a factory function createTachikomaCounter()
 // that returns an inner function. The inner function, when
 // called, should increment and return a private Tachikoma
 // deployment count, demonstrating a closure.
-function createTachikomaCOunter() {
-    
+
+function createTachikomaCounter() {
+    let privateTachikomaCounter = 0;
+
+    return {
+        tachikomaDeploymentCount: function () {
+            return privateTachikomaCounter += 1;
+        },
+    };
 };
+
+const tachikomaCounter = createTachikomaCounter();
+console.log(
+    tachikomaCounter.tachikomaDeploymentCount()
+);
 
 
 
