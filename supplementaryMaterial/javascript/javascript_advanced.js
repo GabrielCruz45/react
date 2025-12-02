@@ -75,35 +75,65 @@ const shallowMissionData = {...missionData};
 
 // change values for check
 shallowMissionData['operation'] = "mofon-GO"
-shallowMissionData['details']['target'] = "Los Gorditos";
+shallowMissionData['details']['target'] = "Los Gorditos"; // this points to the object address and makes the changes there
+shallowMissionData['details']['location'] = "Cawas";
 
 // check if shallow copy
-console.log(missionData);
 console.log(shallowMissionData);
+console.log(missionData);
 
 
 
 // deep copy
-const deepMissionData = JSON.parse(JSON.stringify(missionData));
+const missionData_two = {
+    id: "Tachikoma-01",
+    operation: "Innocence-Retrieval",
+    details: {
+        target: "Puppet Master",
+        location: "Niihama, Japan",
+        status: "Preparation",
+        team: ["Motoko", "Batou", "Togusa"]
+    },
+    timestamp: Date.now()
+};
+
+const deepMissionData = JSON.parse(JSON.stringify(missionData_two));
 
 // change values for check
-deepMissionData['operation'] = "Innocence_Retrieval";
-deepMissionData['details']['team'] = [...deepMissionData['details']['team'], "Gabs"];
+deepMissionData['operation'] = "mofon-GO"
+deepMissionData['details']['target'] = "Los Gorditos"; // this doesn't point to the object address; original stay's the same
+deepMissionData['details']['location'] = "Cawas";
+
 
 // check if deep copy
-console.log(missionData);
 console.log(deepMissionData);
+console.log(missionData_two);
 
 
 
 // Promise (Basic)
+
 // Create a new Promise called hologramCheck that
 // resolves with the string "Hologram stable" if a random
 // number is greater than 0.5, otherwise it rejects with
 // "Hologram glitch".
 
+let hologramCheck = new Promise(function(resolve, reject) {
+    let randomNumber = Math.random();
+    console.log(randomNumber);
 
+    if (randomNumber > 0.5) {
+        resolve("Hologram stable.");
+    }
+    else {
+        reject("Hologram Glitch.");
+    }
+});
 
+hologramCheck.then (
+    function(value) {console.log(value)},
+    function(error) {console.log(error)}
+);
 
 
 
