@@ -141,7 +141,7 @@ hologramCheck.then (
 // Chain the hologramCheck promise with a .then() to log
 // the success message, and a .catch() to log the error
 // message
-
+hologramCheck.then(value => console.log(value)).catch(error => console.log(error));
 
 
 
@@ -152,6 +152,30 @@ hologramCheck.then (
 // fetch function (fetchTargetInfo()) before proceeding to
 // the next step (logging a "Data processed" message).
 
+function fetchTargetInfo() {
+    return new Promise( 
+        (resolve, reject) => {
+            let success = false; // simulate succes or failure
+
+            setTimeout(() => {
+                if (success) {
+                    resolve("Data processed");
+                }
+                else {
+                    reject("Data unprocessed!");
+                };
+            }, 3000);
+        }  
+    );
+};
+
+// async function runTacticalDeployment() {
+//     console.log("Fetching data")
+//     const resolution = await fetchTargetInfo();
+//     console.log(resolution);
+// };
+
+// runTacticalDeployment();
 
 
 
@@ -160,9 +184,18 @@ hologramCheck.then (
 // try...catch block to gracefully handle rejection from
 // fetchTargetInfo().
 
+async function runTacticalDeployment() {
+    try {
+        console.log("Fetching data...");
+        const resolution = await fetchTargetInfo();
+        console.log(resolution);
+    } catch (error) {
+        console.error("Couldn't fetch target information.", error);
+    }
+};
 
 
-
+runTacticalDeployment();
 
 
 
