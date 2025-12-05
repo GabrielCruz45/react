@@ -204,7 +204,7 @@ runTacticalDeployment();
 // conceptual file and use the export default syntax. Show
 // how to import it into a main file using a named import.
 
-import { getPublicSecurityFeed } from "./helpers.js";
+import getPublicSecurityFeed from "./helpers.js";
 
 console.log(getPublicSecurityFeed());
 
@@ -215,14 +215,40 @@ console.log(getPublicSecurityFeed());
 // property that is an arrow function logNameArrow = () =>
 // {...}. Call both to show how this behaves differently.
 
+class CyberneticAgent {
+    constructor(name) {
+        this.name = name;
+    };
 
+    logName() {
+        console.log(`Regular : ${this.name}`);
+    };
+    
+    logNameArrow = () => {
+        console.log(`Arrow : ${this.name}`);
+    };
+};
 
+const cyberPsycho = new CyberneticAgent("__g#4-");
 
+cyberPsycho.logName()
+cyberPsycho.logNameArrow()
 
 // Class Definition (Context)
 // Define a class Tachikoma with a constructor that
 // accepts serialNumber and a method speak(). Create an
 // instance and call the method.
 
+class Tachikoma {
+    constructor(serialNumber) {
+        this.serialNumber = serialNumber;
+    };
 
+    speak() {
+        console.log("Hello...");
+    };
+};
 
+const tachikoma = new Tachikoma(93847201);
+
+tachikoma.speak();
