@@ -155,7 +155,7 @@ hologramCheck.then(value => console.log(value)).catch(error => console.log(error
 function fetchTargetInfo() {
     return new Promise( 
         (resolve, reject) => {
-            let success = false; // simulate succes or failure
+            let success = false; // simulate success or failure
 
             setTimeout(() => {
                 if (success) {
@@ -204,8 +204,9 @@ runTacticalDeployment();
 // conceptual file and use the export default syntax. Show
 // how to import it into a main file using a named import.
 
+import { getPublicSecurityFeed } from "./helpers.js";
 
-
+console.log(getPublicSecurityFeed());
 
 
 // this Context (Function vs. Arrow)
