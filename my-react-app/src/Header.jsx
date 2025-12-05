@@ -1,11 +1,17 @@
-// te quedaste en 10:31
-// active recall -> components, what are they?
-
 function Header(){
     return(
         // only returns one element, but that element can have children elements
         <header>
             <h1>My Website!</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <hr></hr>
         </header>
     );
 };
