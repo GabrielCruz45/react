@@ -1,19 +1,13 @@
-import Header from './Header.jsx';
-import Footer from './Footer.jsx';
-import Food from './Food.jsx';
+// te quedaste en 32:25
+
+import Card from './Card.jsx';
 
 function App() {
     return(
         <>
-            <Header/>
-            <Food/>
-            <Food/>
-            <Food/>
-            <Footer/>
+            <Card/>
         </>
     );
 }
 
 export default App
-
-// te quedaste en 20:25 (lol)
