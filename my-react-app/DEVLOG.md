@@ -1,6 +1,9 @@
-# DEVLOG
+# REACT DEVLOG
 
 Sunday December 7, 2025
+
+    Session 1:
+
     There are three main ways to style a React application (without using an external framework; e.g. Tailwind CSS, etc.)
         1. External -> great for global styles and/of small projects
         2. Module -> preferred for individual components with unique stylings
@@ -28,3 +31,9 @@ Sunday December 7, 2025
                 <element style={styles}>Click me!</element>
             );
         };
+
+
+    Session 2:
+
+    Need to check how to properly use defaultprops, following tutorial's orders doesn't produced the desired result.
+    I did have to download the props package.

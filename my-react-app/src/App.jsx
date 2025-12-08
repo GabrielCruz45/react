@@ -1,14 +1,15 @@
-// te quedaste en 32:25
+// te quedaste en
+import Student from './Student.jsx';
 
-import Card from './Card.jsx';
-import Button from './Button/Button.jsx';
-import Button_two from './Button_two.jsx';
 
 function App() {
     return(
         <>
-            <Button/>
-            <Button_two/>
+            <Student name="Spongebob" age={30} isStudent={true}/>
+            <Student name="Patrick" age={42} isStudent={false}/>
+            <Student name="Squidward" age={50} isStudent={false}/>
+            <Student name="Sandy" age={27} isStudent={true}/>
+            <Student />
         </>
     );
 };
