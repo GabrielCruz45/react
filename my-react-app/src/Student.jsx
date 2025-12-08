@@ -3,6 +3,7 @@
 //              <Component key=value />
 
 import PropTypes from 'prop-types';
+// import React from 'react';
 
 function Student(props){
     const styles = {
@@ -28,7 +29,7 @@ function Student(props){
 Student.propTypes = {
     name: PropTypes.string,
     age: PropTypes.number,
-    isStudent: PropTypes.bool
+    isStudent: PropTypes.bool,
 };
 
 
@@ -36,9 +37,9 @@ Student.propTypes = {
 // deaultProps  -   default values for props in case they are not passed down from the parent component
 //                  name: "Guest"
 Student.defaultProps = {
-    name: 'Guest',
+    name: "Guest",
     age: 0,
-    isStudent: false
+    isStudent: false,
 };
 //                  to check, add an empty component in App.jsx
 
