@@ -2,9 +2,9 @@
 
 Sunday December 7, 2025
     There are three main ways to style a React application (without using an external framework; e.g. Tailwind CSS, etc.)
-        1. External
-        2. Module
-        3. Inline
+        1. External -> great for global styles and/of small projects
+        2. Module -> preferred for individual components with unique stylings
+        3. Inline -> best for small components with minimal styling
 
     External -> using a "standard" .css file
     
