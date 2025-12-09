@@ -1,8 +1,8 @@
 // conditional rendering    -   allows you to control what gets rendered 
 //                              in your application based on certain conditions
 //                              (show, hide, or change components)
+
 import PropTypes from 'prop-types';
-// import React from 'react';
 
 function UserGreeting(props){
 
@@ -15,7 +15,7 @@ function UserGreeting(props){
     const loginPrompt = <h2 style={styles} className="login-prompt">Please log in.</h2>;
     
 
-    return(props.isLoggedIn ?  welcomeMessage : loginPrompt);
+    return(props.isLoggedIn ? welcomeMessage : loginPrompt);
 };
 
 UserGreeting.proptypes = {

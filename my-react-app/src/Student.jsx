@@ -3,7 +3,6 @@
 //              <Component key=value />
 
 import PropTypes from 'prop-types';
-// import React from 'react';
 
 function Student(props){
     const styles = {
