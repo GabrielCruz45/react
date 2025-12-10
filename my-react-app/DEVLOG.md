@@ -52,3 +52,6 @@ Sunday December 7, 2025
     ```
 
     *Still need to revist the defaultProps problem*
+
+Tuesday December 9, 2025
+    Click events

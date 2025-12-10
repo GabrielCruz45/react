@@ -72,7 +72,7 @@
 
 
 
-
+/* list rendering  */
 .list-category{
   font-size: 2.5em;
   font-weight: bold;
@@ -95,3 +95,24 @@
   color: hsl(0, 0%, 45%);
   cursor: pointer;
 }
+
+
+/* onClick */
+
+/* .button-three{
+
+} */
+
+.button-three:hover{
+  cursor: pointer;
+  color: #cecece;
+}
+
+.alert-button:hover {
+  cursor: pointer;
+}
+
+
+.profile-picture:hover {
+  cursor: pointer;
+};
