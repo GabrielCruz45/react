@@ -1,11 +1,12 @@
 // te quedaste en
-import ProfilePicture from "./ProfilePicture.jsx";
+import Hook from "./Hook.jsx";
+
 
 
 function App() {
     return(
         <>
-            <ProfilePicture />
+            <Hook />
         </>
     );
 };

@@ -2,10 +2,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: rgb(3, 0, 24);
-  color: whitesmoke;
+  /* background-color: rgb(3, 0, 24); */
+  /* color: whitesmoke; */
 }
 
+button:hover {
+  cursor: pointer;
+}
 
 
 /* cards, obviously */
