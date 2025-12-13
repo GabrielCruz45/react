@@ -11,9 +11,7 @@ import {useState} from 'react';
 
 export default function Hook(){
     const [name, setName] = useState("Guest");
-
     const [age, setAge] = useState(0);
-
     const [isEmployed, setIsEmployed] = useState(false);
 
 
@@ -49,7 +47,7 @@ export default function Hook(){
             </button>
             
             <p>
-                Is employed? {isEmployed ? "Yes" : "No"}
+                Is employed? {isEmployed ? "Yes" : "No"} {/* ternary operator */}
             </p>
             <button onClick={updateEmployment}>
                 Update employment
